@@ -6,7 +6,7 @@ import AnimatedButton from "./AnimatedButton";
 import { motion } from "motion/react";
 
 const FeaturedProducts = () => {
-  const { data, isLoading, isError } = useQuery<Product[]>({
+  const { data, isLoading } = useQuery<Product[]>({
     queryKey: ["featured"],
     queryFn: async () => {
       const res = await axios.get<Product[]>(
@@ -28,7 +28,7 @@ const FeaturedProducts = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
             key={product.id}
-            className="md:w-[250px] w-[350px] h-[365px] border-2 border-cusT rounded-2xl flex flex-col p-6 items-center"
+            className="md:w-[250px] w-[300px] h-[365px] border-2 border-cusT rounded-2xl flex flex-col p-6 items-center"
           >
             <div className="relative flex justify-center mb-3">
               <img
