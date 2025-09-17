@@ -1,9 +1,5 @@
 import Navbar from "./Components/Navbar";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import { createContext, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -25,7 +21,7 @@ function App() {
     <Router>
       <QueryClientProvider client={AppClient}>
         <AppContext.Provider value={contextValue}>
-          <ScrollToTop /> {/* 👈 goes here */}
+          <ScrollToTop /> 
           <div className={`${theme} text-cusT transition-colors duration-300`}>
             <Navbar />
             <Routes>
