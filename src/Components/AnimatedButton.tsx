@@ -6,7 +6,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({transparent, value, onCl
   return (
     <AnimatePresence>
       <motion.button
-        onClick={() => onClick()}
+        onClick={onClick}
         whileTap={{ scale: 0.8 }}
         className={`font-semibold text-lg ${transparent ? "bg-transparent border-2 border-oth" : "bg-oth"} py-2 px-6 rounded-full`}
       >

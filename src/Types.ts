@@ -8,7 +8,7 @@ export interface NavProps{
 }
 export interface AnimatedButtonProps{
   transparent: Boolean;
-  onClick: () => void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   value: String;
 }
 
@@ -31,4 +31,12 @@ export interface Product {
   images: string[];
   creationAt: string; // ISO date string
   updatedAt: string; // ISO date string
+}
+
+export type  ProductInfoParams = {
+  productId: string
+}
+
+export type ProductParams = {
+  product: Product
 }

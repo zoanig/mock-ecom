@@ -4,6 +4,7 @@ import type { Product } from "../Types";
 import SkeletonLoader from "./SkeletonLoader";
 import AnimatedButton from "./AnimatedButton";
 import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedProducts = () => {
   const { data, isLoading } = useQuery<Product[]>({
@@ -15,7 +16,7 @@ const FeaturedProducts = () => {
       return res.data;
     },
   });
-
+  const navigate = useNavigate();
 
   return (
     <div className="w-[85%] flex flex-col items-center mx-auto gap-5">
@@ -23,7 +24,7 @@ const FeaturedProducts = () => {
       {
         !isLoading ? (<div className="flex flex-wrap justify-center gap-6 p-6">
         {data?.map((product) => (
-          <motion.div
+          <motion.div onClick={() => navigate(`/products/${product.id}`)}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
@@ -52,7 +53,7 @@ const FeaturedProducts = () => {
             <div className="mt-auto">
               <AnimatedButton
                 value="Add To Cart"
-                onClick={() => {}}
+                onClick={(e) => {e.stopPropagation()}}
                 transparent={false}
               />
             </div>

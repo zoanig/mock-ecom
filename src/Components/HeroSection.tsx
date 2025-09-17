@@ -11,7 +11,7 @@ const HeroSection = () => {
         className="flex justify-center items-center h-screen"
       >
         <div>
-          <div className="p-6">
+          <div className="p-6 z-10">
             <h1 className="text-7xl text-center font-sans font-extrabold">
               Quality You{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 to-oth">
