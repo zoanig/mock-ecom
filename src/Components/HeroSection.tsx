@@ -3,11 +3,12 @@ import { motion, AnimatePresence } from "motion/react";
 
 const HeroSection = () => {
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{y: 30 }}
+        whileInView={{ y: 0 }}
         transition={{ duration: 0.3 }}
+        viewport={{ once: false, amount: 0.2 }}
         className="flex justify-center items-center h-screen"
       >
         <div>

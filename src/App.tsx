@@ -8,6 +8,7 @@ import Footer from "./Components/Footer";
 import NotFound from "./Components/NotFound";
 import ProductInfo from "./Pages/ProductInfo";
 import ScrollToTop from "./Components/ScrollToTop";
+import Explore from "./Pages/Explore";
 
 export const AppContext = createContext<IThemeContext | undefined>(undefined);
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/products/:productId" element={<ProductInfo />} />
+              <Route path="/explore" element={<Explore />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />

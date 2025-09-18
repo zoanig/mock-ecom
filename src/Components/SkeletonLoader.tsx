@@ -11,7 +11,7 @@ export default function SkeletonLoader({
   const items = Array.from({ length: count });
 
   return (
-    <div className="flex flex-wrap justify-center gap-6 p-6">
+    <div className="flex flex-wrap justify-center gap-6 py-32">
       {items?.map((_) => (
         <motion.div
           initial={{ opacity: 0, y: 30 }}
