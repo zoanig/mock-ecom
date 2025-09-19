@@ -55,10 +55,10 @@ const Explore = () => {
 
   return (
     <AnimatePresence>
-    <div ref={topRef} className="w-[80vw] mx-auto flex flex-col items-center py-3">
+    <div ref={topRef} className="w-[80vw] mx-auto flex flex-col items-center py-32">
       <div>
         {!isLoading ? (
-          <div className="flex flex-wrap justify-center gap-6 py-32">
+          <div className="flex flex-wrap justify-center gap-6 py-3">
             {data?.map((product) => (
               <motion.div
                 onClick={() => navigate(`/products/${product.id}`)}

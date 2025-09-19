@@ -9,6 +9,7 @@ import NotFound from "./Components/NotFound";
 import ProductInfo from "./Pages/ProductInfo";
 import ScrollToTop from "./Components/ScrollToTop";
 import Explore from "./Pages/Explore";
+import About from "./Pages/About";
 
 export const AppContext = createContext<IThemeContext | undefined>(undefined);
 function App() {
@@ -29,6 +30,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/products/:productId" element={<ProductInfo />} />
               <Route path="/explore" element={<Explore />} />
+              <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
