@@ -7,8 +7,8 @@ const HeroSection = () => {
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        initial={{y: 30 }}
-        whileInView={{ y: 0 }}
+        initial={{ opacity: 0, scale: 0.1 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
         viewport={{ once: false, amount: 0.2 }}
         className="flex justify-center items-center h-screen"
@@ -26,12 +26,16 @@ const HeroSection = () => {
             </p>
             <div className="flex md:flex-row flex-col gap-4 justify-center mt-3">
               <AnimatedButton
-                onClick={() => {navigate("/explore")}}
+                onClick={() => {
+                  navigate("/explore");
+                }}
                 transparent={false}
                 value={"Start Shopping"}
               />
               <AnimatedButton
-                onClick={() => {navigate("/about")}}
+                onClick={() => {
+                  navigate("/about");
+                }}
                 transparent={true}
                 value={"Learn More"}
               />

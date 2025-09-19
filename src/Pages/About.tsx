@@ -14,21 +14,15 @@ const About = () => {
   ];
   return (
     <div className="md:w-[60vw] w-[80vw] mx-auto py-32 flex flex-col items-center gap-10">
-      <motion.div
-        initial={{ y: 30 }}
-        whileInView={{ y: 0 }}
-        transition={{ duration: 0.3 }}
+      <div
       >
         <h1 className="text-center text-3xl font-bold">About This Store</h1>
         <p className="text-lg text-center">
           This is a practice e-commerce site built to learn modern web
           development tools.
         </p>
-      </motion.div>
-      <motion.div
-        initial={{ y: 30 }}
-        whileInView={{ y: 0 }}
-        transition={{ duration: 0.3 }}
+      </div>
+      <div
       >
         <h1 className="text-center text-3xl font-bold">Purpose</h1>
         <p className="text-lg text-center">
@@ -44,7 +38,7 @@ const About = () => {
           </a>
           as the data source for products.
         </p>
-      </motion.div>
+      </div>
       <motion.div
         initial={{ y: 30 }}
         whileInView={{ y: 0 }}
@@ -55,15 +49,21 @@ const About = () => {
           {techUsed.map((stack) => {
             const Icon = stack.Icon;
             return (
-              <div className="p-5 flex-1 flex flex-col items-center gap-3">
+              <motion.div
+                initial={{ opacity: 0.6, scale: 0.1 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+                className="p-5 flex-1 flex flex-col items-center gap-3"
+              >
                 <Icon className="size-9" />
                 <p className="text-center text-lg">{stack.name}</p>
-              </div>
+              </motion.div>
             );
           })}
         </div>
       </motion.div>
-      <motion.div className="p-6 bg-oth rounded-lg"
+      <motion.div
+        className="p-6 bg-oth rounded-lg"
         initial={{ y: 30 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.3 }}
