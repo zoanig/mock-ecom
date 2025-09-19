@@ -5,6 +5,8 @@ import SkeletonLoader from "./SkeletonLoader";
 import AnimatedButton from "./AnimatedButton";
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AppContext } from "../App";
 
 const FeaturedProducts = () => {
   const { data, isLoading } = useQuery<Product[]>({
@@ -16,6 +18,7 @@ const FeaturedProducts = () => {
       return res.data;
     },
   });
+  const appContext = useContext(AppContext);
   const navigate = useNavigate();
 
   return (
@@ -53,8 +56,9 @@ const FeaturedProducts = () => {
             <div className="mt-auto">
               <AnimatedButton
                 value="Add To Cart"
-                onClick={(e) => {e.stopPropagation()}}
+                onClick={(e) => {e.stopPropagation(); appContext?.addToCart(product)}}
                 transparent={false}
+                disabled={appContext?.cart?.includes(product)}
               />
             </div>
           </motion.div>

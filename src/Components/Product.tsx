@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import type { ProductParams } from "../Types";
 import { motion } from "motion/react";
+import { AppContext } from "../App";
 
 const Product: React.FC<ProductParams> = ({ product }) => {
+  const appContext = useContext(AppContext);
   return (
-    <motion.div 
-    initial={{
-      opacity:0
-    }}
-    whileInView={{
-      opacity: 1
-    }}
-    transition={{
-      duration: 0.3
-    }}
-    className="flex md:flex-row flex-col items-center  md:py-32 py-20 gap-5">
+    <motion.div
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.3,
+      }}
+      className="flex md:flex-row flex-col items-center  md:py-32 py-20 gap-5"
+    >
       <div className="flex flex-col gap-1">
         <div>
           <img
@@ -43,7 +46,17 @@ const Product: React.FC<ProductParams> = ({ product }) => {
         </span>
         <div className="flex gap-3 md:flex-row flex-col md:items-center w-[100%]">
           <span className="opacity-75 font-bold">Price: ${product.price}</span>
-          <motion.button whileTap={{scale: 0.8}} className="bg-oth text-cusT md:w-max w-[100%] font-semibold py-1 px-3 rounded-full">Add To Cart</motion.button>
+          <motion.button
+            whileTap={{ scale: 0.8 }}
+            onClick={(e) => {
+              e.stopPropagation();
+              appContext?.addToCart(product);
+            }}
+            disabled={appContext?.cart?.includes(product)}
+            className="bg-oth text-cusT md:w-max w-[100%] font-semibold py-1 px-3 rounded-full"
+          >
+            Add To Cart
+          </motion.button>
         </div>
         <p className="mt-5">{product.description}</p>
       </div>

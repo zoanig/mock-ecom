@@ -1,7 +1,7 @@
 const SkeletonLayout = () => {
   return (
     <div
-      className="flex md:flex-row flex-col md:py-3 py-10 gap-7"
+      className="flex md:flex-row flex-col md:py-20 py-10 gap-7"
     >
       <div className="flex flex-col gap-1">
         <div>

@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import type { Product } from "../Types";
 import { AnimatePresence, motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import AnimatedButton from "../Components/AnimatedButton";
 import SkeletonLoader from "../Components/SkeletonLoader";
+import { AppContext } from "../App";
 
 const Explore = () => {
   const [offset, setOffset] = useState(0);
@@ -35,6 +36,7 @@ const Explore = () => {
     },
     enabled: !!data,
   });
+  const appContext = useContext(AppContext)
 
   const hasPrev = offset > 0;
   const hasNext = (nextPage?.length ?? 0) > 0;
@@ -87,12 +89,11 @@ const Explore = () => {
 
                 <div className="mt-auto">
                   <AnimatedButton
-                    value="Add To Cart"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                    }}
-                    transparent={false}
-                  />
+                value="Add To Cart"
+                onClick={(e) => {e.stopPropagation(); appContext?.addToCart(product)}}
+                disabled={appContext?.cart?.includes(product)}
+                transparent={false}
+              />
                 </div>
               </motion.div>
             ))}

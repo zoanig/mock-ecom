@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import { createContext, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import type { IThemeContext, Themes } from "./Types";
+import type { IAppContext, Product, Themes } from "./Types";
 import Footer from "./Components/Footer";
 import NotFound from "./Components/NotFound";
 import ProductInfo from "./Pages/ProductInfo";
@@ -11,14 +11,17 @@ import ScrollToTop from "./Components/ScrollToTop";
 import Explore from "./Pages/Explore";
 import About from "./Pages/About";
 
-export const AppContext = createContext<IThemeContext | undefined>(undefined);
+export const AppContext = createContext<IAppContext | undefined>(undefined);
 function App() {
   const [theme, setTheme] = useState<Themes>("bg-bgdark");
+  const [cart, setCart] = useState<Product[]>([])
   const toggleTheme = () => {
     setTheme((prev) => (prev === "bg-bgdark" ? "bg-bglight" : "bg-bgdark"));
   };
-  const contextValue: IThemeContext = { theme, toggleTheme };
+  const addToCart = (p: Product) => {setCart((prev) => [...prev, p])}
+  const contextValue: IAppContext = { theme, toggleTheme, cart, addToCart };
   const AppClient = new QueryClient();
+  console.log(cart);
   return (
     <Router>
       <QueryClientProvider client={AppClient}>

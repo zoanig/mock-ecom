@@ -18,7 +18,7 @@ const About = () => {
       >
         <h1 className="text-center text-3xl font-bold">About This Store</h1>
         <p className="text-lg text-center">
-          This is a practice e-commerce site built to learn modern web
+          This is a practice e-commerce site made by <a>Muhammad Hassan (zoanig)</a> built to learn modern web
           development tools.
         </p>
       </div>
@@ -64,14 +64,14 @@ const About = () => {
       </motion.div>
       <motion.div
         className="p-6 bg-oth rounded-lg"
-        initial={{ y: 30 }}
-        whileInView={{ y: 0 }}
+        initial={{ opacity: 0, scaleX: 0 }}
+        whileInView={{ opacity: 1, scaleX: 1 }}
         transition={{ duration: 0.3 }}
       >
         <h1 className="text-center text-3xl font-bold">Disclaimer</h1>
         <p className="text-lg text-center">
-          This is <span>not a real store</span>. Products, prices, and images
-          are all generated for practice. Please don’t attempt to purchase
+          This is <span className="font-bold">not a real store</span>. Products, prices, and images
+          are all generated for practice. Please do not attempt to purchase
           anything.
         </p>
       </motion.div>

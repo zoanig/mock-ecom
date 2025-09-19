@@ -11,12 +11,12 @@ export default function SkeletonLoader({
   const items = Array.from({ length: count });
 
   return (
-    <div className="flex flex-wrap justify-center gap-6 py-32">
+    <div className="flex flex-wrap justify-center gap-6 py-3">
       {items?.map((_) => (
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.3 }}
           className="w-[250px] h-[350px] border-2 border-cusT rounded-2xl flex flex-col p-4 gap-2 items-center"
         >
           {/* Image + Category Tag */}
