@@ -18,7 +18,7 @@ const About = () => {
       >
         <h1 className="text-center text-3xl font-bold">About This Store</h1>
         <p className="text-lg text-center">
-          This is a practice e-commerce site made by <a>Muhammad Hassan (zoanig)</a> built to learn modern web
+          This is a practice e-commerce site made by <a className="hover:underline font-bold text-oth" href="https://github.com/zoanig">Muhammad Hassan (zoanig)</a>, built to learn modern web
           development tools.
         </p>
       </div>
@@ -32,7 +32,7 @@ const About = () => {
           <a
             href="https://fakeapi.platzi.com/"
             target="_blank"
-            className="text-oth hover:underline hover:cursor-pointer"
+            className="text-oth hover:underline hover:cursor-pointer font-bold"
           >
             Platzi Fake Store API{" "}
           </a>
