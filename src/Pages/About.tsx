@@ -63,7 +63,7 @@ const About = () => {
           })}
         </div>
       </motion.div>
-      <motion.div className="p-6 bg-oth"
+      <motion.div className="p-6 bg-oth rounded-lg"
         initial={{ y: 30 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.3 }}

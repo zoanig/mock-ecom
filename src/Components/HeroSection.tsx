@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import AnimatedButton from "../Components/AnimatedButton";
 import { motion, AnimatePresence } from "motion/react";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -24,12 +26,12 @@ const HeroSection = () => {
             </p>
             <div className="flex md:flex-row flex-col gap-4 justify-center mt-3">
               <AnimatedButton
-                onClick={() => {}}
+                onClick={() => {navigate("/explore")}}
                 transparent={false}
                 value={"Start Shopping"}
               />
               <AnimatedButton
-                onClick={() => {}}
+                onClick={() => {navigate("/about")}}
                 transparent={true}
                 value={"Learn More"}
               />
