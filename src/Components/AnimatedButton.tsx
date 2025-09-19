@@ -13,7 +13,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({transparent, value, onCl
           y: -2
         }}
         transition={{duration: 0.15}}
-        className={`disabled:opacity-75 font-semibold text-lg ${transparent ? "bg-transparent border-2 border-oth" : "bg-oth"} py-2 px-6 rounded-full`}
+        className={`disabled:opacity-20 font-semibold text-lg ${transparent ? "bg-transparent border-2 border-oth" : "bg-oth"} py-2 px-6 rounded-full`}
       >
         {value}
       </motion.button>

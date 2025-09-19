@@ -91,7 +91,7 @@ const Explore = () => {
                   <AnimatedButton
                 value="Add To Cart"
                 onClick={(e) => {e.stopPropagation(); appContext?.addToCart(product)}}
-                disabled={appContext?.cart?.includes(product)}
+                disabled={appContext?.cart?.some(obj => obj.id === product.id)}
                 transparent={false}
               />
                 </div>

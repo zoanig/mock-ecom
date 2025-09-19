@@ -52,8 +52,11 @@ const Product: React.FC<ProductParams> = ({ product }) => {
               e.stopPropagation();
               appContext?.addToCart(product);
             }}
-            disabled={appContext?.cart?.includes(product)}
-            className="bg-oth text-cusT md:w-max w-[100%] font-semibold py-1 px-3 rounded-full"
+            whileHover={{
+              y: -2
+            }}
+            disabled={appContext?.cart?.some(obj => obj.id === product.id)}
+            className="bg-oth disabled:opacity-20 text-cusT md:w-max w-[100%] font-semibold py-2 px-4 rounded-full"
           >
             Add To Cart
           </motion.button>

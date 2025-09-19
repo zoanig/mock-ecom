@@ -58,7 +58,7 @@ const FeaturedProducts = () => {
                 value="Add To Cart"
                 onClick={(e) => {e.stopPropagation(); appContext?.addToCart(product)}}
                 transparent={false}
-                disabled={appContext?.cart?.includes(product)}
+                disabled={appContext?.cart?.some(obj => obj.id === product.id)}
               />
             </div>
           </motion.div>
